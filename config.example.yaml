@@ -1,0 +1,42 @@
+global:
+  log_level: info
+  log_file: ~/.ftpx/ftpx.log
+  default_profile: ""
+  transfer:
+    buffer_size: 32768
+    parallel_count: 3
+    timeout: 30s
+    retry_count: 3
+    rate_limit: 0
+  sync:
+    checksum_algorithm: md5
+    ignore_patterns:
+      - .DS_Store
+      - Thumbs.db
+      - .git/
+
+profiles:
+  example-sftp:
+    protocol: sftp
+    host: example.com
+    port: 22
+    user: admin
+    auth:
+      type: key
+      key_file: ~/.ssh/id_rsa
+      passphrase: ""
+    options:
+      compression: false
+      keep_alive: 30s
+
+  example-password:
+    protocol: sftp
+    host: example.com
+    port: 22
+    user: admin
+    auth:
+      type: password
+      password: ""  # 留空会在运行时提示输入
+    options:
+      compression: false
+      keep_alive: 30s
