@@ -1,5 +1,6 @@
 # 二进制文件
 ftpcli
+ftpx
 *.exe
 *.dll
 *.so
@@ -8,6 +9,19 @@ ftpcli
 # 测试文件
 *.test
 *.out
+test-*.txt
+test-*.bin
+test-*.sh
+*-test.txt
+*-test.bin
+checksum*.txt
+resume*.bin
+downloaded*/
+test-dir/
+
+# Docker 测试环境
+docker-compose.yml
+vsftpd.conf
 
 # Go 工作空间文件
 go.work
@@ -33,3 +47,14 @@ config.yaml
 # 临时文件
 tmp/
 temp/
+
+# 项目内部文档（开发过程）
+FINAL_SUMMARY.md
+PHASE*.md
+PROJECT_STATUS.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+RELEASE_NOTES_*.md
+RENAME_SUMMARY.md
+TEST_REPORT.md
+TESTING_CHECKLIST.md
